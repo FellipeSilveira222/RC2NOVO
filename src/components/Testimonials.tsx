@@ -8,28 +8,23 @@ const Testimonials: React.FC = () => {
   const testimonials = [
     {
       name: "João, 36 anos",
-      text: "Achei que só transplante resolveria. Em 2 semanas, já vi diferença.",
-      avatar: "https://images.pexels.com/photos/1516680/pexels-photo-1516680.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop"
+      text: "Achei que só transplante resolveria. Em 2 semanas, já vi diferença."
     },
     {
-      name: "Ricardo, 29 anos", 
-      text: "Voltei a usar boné por estilo, não por vergonha.",
-      avatar: "https://images.pexels.com/photos/1212984/pexels-photo-1212984.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop"
+      name: "Ricardo, 29 anos",
+      text: "Voltei a usar boné por estilo, não por vergonha."
     },
     {
       name: "Maurício, 48 anos",
-      text: "Não esperava tanto. Meu cabelo parou de cair em 10 dias.",
-      avatar: "https://images.pexels.com/photos/1043474/pexels-photo-1043474.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop"
+      text: "Não esperava tanto. Meu cabelo parou de cair em 10 dias."
     },
     {
       name: "Carlos, 42 anos",
-      text: "Minha esposa notou a diferença antes mesmo de eu perceber.",
-      avatar: "https://images.pexels.com/photos/1222271/pexels-photo-1222271.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop"
+      text: "Minha esposa notou a diferença antes mesmo de eu perceber."
     },
     {
       name: "Fernando, 35 anos",
-      text: "Protocolo simples e eficaz. Recomendo para todos os amigos.",
-      avatar: "https://images.pexels.com/photos/1681010/pexels-photo-1681010.jpeg?auto=compress&cs=tinysrgb&w=100&h=100&fit=crop"
+      text: "Protocolo simples e eficaz. Recomendo para todos os amigos."
     }
   ];
 
@@ -116,15 +111,8 @@ const Testimonials: React.FC = () => {
                 whileHover={{ scale: 1.02 }}
               >
                 <div className="flex items-center mb-6">
-                  <img 
-                    src={testimonials[currentTestimonial].avatar}
-                    alt={testimonials[currentTestimonial].name}
-                    className="w-16 h-16 rounded-full mr-4 object-cover"
-                  />
-                  <div>
-                    <User className="w-5 h-5 text-[#3f5c4f] mb-2" />
-                    <h3 className="font-semibold text-gray-900 text-lg">{testimonials[currentTestimonial].name}</h3>
-                  </div>
+                  <User className="w-5 h-5 text-[#3f5c4f] mr-3" />
+                  <h3 className="font-semibold text-gray-900 text-lg">{testimonials[currentTestimonial].name}</h3>
                 </div>
                 <p className="text-gray-600 italic text-lg text-center">"{testimonials[currentTestimonial].text}"</p>
               </motion.div>
