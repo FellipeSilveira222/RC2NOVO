@@ -33,6 +33,15 @@ const Testimonials: React.FC = () => {
     }
   ];
 
+  // Auto-rotate testimonials every 4 seconds
+  React.useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+    }, 4000);
+
+    return () => clearInterval(interval);
+  }, [testimonials.length]);
+
   const nextTestimonial = () => {
     setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
   };
@@ -94,36 +103,31 @@ const Testimonials: React.FC = () => {
             <ChevronRight className="w-6 h-6" />
           </button>
 
-          {/* Testimonials Display */}
+          {/* Single Testimonial Display */}
           <div className="flex justify-center">
-            <div className="grid md:grid-cols-3 gap-8 max-w-4xl">
-              {[0, 1, 2].map((offset) => {
-                const index = (currentTestimonial + offset) % testimonials.length;
-                const testimonial = testimonials[index];
-                return (
-                  <motion.div 
-                    key={`${currentTestimonial}-${offset}`}
-                    className="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: offset * 0.1 }}
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    <div className="flex items-center mb-4">
-                      <img 
-                        src={testimonial.avatar}
-                        alt={testimonial.name}
-                        className="w-12 h-12 rounded-full mr-4 object-cover"
-                      />
-                      <div>
-                        <User className="w-4 h-4 text-[#3f5c4f] mb-1" />
-                        <h3 className="font-semibold text-gray-900">{testimonial.name}</h3>
-                      </div>
-                    </div>
-                    <p className="text-gray-600 italic">"{testimonial.text}"</p>
-                  </motion.div>
-                );
-              })}
+            <div className="max-w-2xl w-full">
+              <motion.div 
+                key={currentTestimonial}
+                className="bg-white p-8 rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
+                initial={{ opacity: 0, y: 30 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -30 }}
+                transition={{ duration: 0.6 }}
+                whileHover={{ scale: 1.02 }}
+              >
+                <div className="flex items-center mb-6">
+                  <img 
+                    src={testimonials[currentTestimonial].avatar}
+                    alt={testimonials[currentTestimonial].name}
+                    className="w-16 h-16 rounded-full mr-4 object-cover"
+                  />
+                  <div>
+                    <User className="w-5 h-5 text-[#3f5c4f] mb-2" />
+                    <h3 className="font-semibold text-gray-900 text-lg">{testimonials[currentTestimonial].name}</h3>
+                  </div>
+                </div>
+                <p className="text-gray-600 italic text-lg text-center">"{testimonials[currentTestimonial].text}"</p>
+              </motion.div>
             </div>
           </div>
           
