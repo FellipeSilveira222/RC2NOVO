@@ -1,8 +1,8 @@
 import React from 'react';
-+import { motion } from 'framer-motion';
-+import { ArrowLeft } from 'lucide-react';
-+import { Link } from 'react-router-dom';
-+
+import { motion } from 'framer-motion';
+import { ArrowLeft } from 'lucide-react';
+import { Link } from 'react-router-dom';
+
 +const PrivacyPolicy: React.FC = () => {
 +  return (
 +    <div className="min-h-screen bg-gray-50 py-16">
