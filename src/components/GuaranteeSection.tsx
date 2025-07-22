@@ -91,7 +91,7 @@ const GuaranteeSection: React.FC = () => {
           transition={{ duration: 0.8, delay: 0.6 }}
         >
           <motion.a 
-            href="https://pay.kirvano.com/f6d3ddf1-b6c0-4f47-8c9c-e50f287fde14"
+            href="https://pay.kirvano.com/35919e34-a71f-448d-9b0b-fa8c86e060be"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block bg-white hover:bg-gray-100 text-[#3f5c4f] font-bold py-4 px-8 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl animate-pulse-border"
